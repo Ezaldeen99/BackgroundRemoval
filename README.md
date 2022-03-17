@@ -41,6 +41,39 @@ let image = UIImage(named: "child")
 segmentedImage.image = BackgroundRemoval.init().removeBackground(image: image!, maskOnly: true)
 ```
 
+
+### Improve results
+
+you may see some shadows on the edges after you remove the background, you can add some filters on your mask before you mask the input image to get the output result, here is an example of a good tested workaround that gave me a better resutls
+
+```swift
+let image = UIImage(named: "child")
+let scaledOut = BackgroundRemoval.init().removeBackground(image: image!, maskOnly: true)
+
+
+/// post processing to get rid of image blur
+let imageSource = BBMetalStaticImageSource(image: scaledOut)
+
+// Set up some filters for mask post processing
+let contrastFilter = BBMetalContrastFilter(contrast: 3)
+let sharpenFilter = BBMetalSharpenFilter(sharpeness: 1)
+
+// Set up filter chain
+// Make last filter run synchronously
+imageSource.add(consumer: contrastFilter)
+ //   .add(consumer: lookupFilter)
+    .add(consumer: sharpenFilter)
+    .runSynchronously = true
+
+// Start processing
+imageSource.transmitTexture()
+
+// Get filtered mask
+let filteredImage = sharpenFilter.outputTexture?.bb_image
+
+```
+
+
 ### iOS version
 
 The model supports macOS = 11, iOS = 14. however the library currently supports only iOS systems.
