@@ -1,14 +1,14 @@
 # BackgroundRemoval
 
-<img src="Screenshots/results.jpg" alt="Removal results" align="center" />
+<img src="https://github.com/Ezaldeen99/BackgroundRemoval/blob/main/ScreenShots/results.jpg" alt="Removal results" align="center" />
 
-![License](https://img.shields.io/cocoapods/l/Gallery.svg?style=flat)
-![Platform](https://img.shields.io/cocoapods/p/Gallery.svg?style=flat)
+![License](https://img.shields.io/static/v1?style=for-the-badge&message=Apache&color=D22128&logo=Apache&logoColor=FFFFFF&label=)
+![Platform](https://img.shields.io/static/v1?style=for-the-badge&message=iOS&color=000000&logo=iOS&logoColor=FFFFFF&label=)
 ![Swift](https://img.shields.io/badge/%20in-swift%205.0-orange.svg)
 
 ## Description
 
-<img src="Screenshots/logo.jpg" alt="Removal Icon" align="right" width="250" height="250" />
+<img src="https://github.com/Ezaldeen99/BackgroundRemoval/blob/main/ScreenShots/logo.jpg" alt="Removal Icon" align="right" width="250" height="250" />
 
 We depends heavily on Images these days, and sometimes developers need to make processing on these files and one of these things that give us headache is backgorund removal, I really hate that there are so few open source background removal models and libraries so I decided to make this library open source so people can use it, If this suits your need, give it a try 😉
 
@@ -64,3 +64,15 @@ Ezaldeen sahb, let us connect https://www.linkedin.com/in/ezaldeen-sahb-17918b13
 ## Contributing
 
 We would love you to contribute to **Background Removal**, there is still a huge room for improvment.
+
+
+## Credits
+The library wouldn't be done without the effort of open source community specially.
+- [U-2-Net](https://github.com/xuebinqin/U-2-Net)
+- [SmartyToe](https://github.com/SmartyToe/Image-segmentation)
+
+
+
+## License
+Project is published under the Apache 2.0 license. Feel free to clone and modify repo as you want, but don't forget to add reference to authors :)
+
