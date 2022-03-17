@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
-        let image = UIImage(named: "test2")
+        let image = UIImage(named: "child")
         inputImage.image = image
         outputImage.image = BackgroundRemoval.init().removeBackground(image: image!)
         segmentedImage.image = BackgroundRemoval.init().removeBackground(image: image!, maskOnly: true)
