@@ -1,0 +1,143 @@
+[
+  {
+    "shortDescription" : "--",
+    "metadataOutputVersion" : "3.0",
+    "outputSchema" : [
+      {
+        "height" : "320",
+        "colorspace" : "Grayscale",
+        "isOptional" : "0",
+        "width" : "320",
+        "isColor" : "0",
+        "formattedType" : "Image (Grayscale 320 × 320)",
+        "hasSizeFlexibility" : "0",
+        "type" : "Image",
+        "shortDescription" : "--",
+        "name" : "out_p0"
+      },
+      {
+        "height" : "320",
+        "colorspace" : "Grayscale",
+        "isOptional" : "0",
+        "width" : "320",
+        "isColor" : "0",
+        "formattedType" : "Image (Grayscale 320 × 320)",
+        "hasSizeFlexibility" : "0",
+        "type" : "Image",
+        "shortDescription" : "--",
+        "name" : "out_p1"
+      },
+      {
+        "height" : "320",
+        "colorspace" : "Grayscale",
+        "isOptional" : "0",
+        "width" : "320",
+        "isColor" : "0",
+        "formattedType" : "Image (Grayscale 320 × 320)",
+        "hasSizeFlexibility" : "0",
+        "type" : "Image",
+        "shortDescription" : "--",
+        "name" : "out_p2"
+      },
+      {
+        "height" : "320",
+        "colorspace" : "Grayscale",
+        "isOptional" : "0",
+        "width" : "320",
+        "isColor" : "0",
+        "formattedType" : "Image (Grayscale 320 × 320)",
+        "hasSizeFlexibility" : "0",
+        "type" : "Image",
+        "shortDescription" : "--",
+        "name" : "out_p3"
+      },
+      {
+        "height" : "320",
+        "colorspace" : "Grayscale",
+        "isOptional" : "0",
+        "width" : "320",
+        "isColor" : "0",
+        "formattedType" : "Image (Grayscale 320 × 320)",
+        "hasSizeFlexibility" : "0",
+        "type" : "Image",
+        "shortDescription" : "--",
+        "name" : "out_p4"
+      },
+      {
+        "height" : "320",
+        "colorspace" : "Grayscale",
+        "isOptional" : "0",
+        "width" : "320",
+        "isColor" : "0",
+        "formattedType" : "Image (Grayscale 320 × 320)",
+        "hasSizeFlexibility" : "0",
+        "type" : "Image",
+        "shortDescription" : "--",
+        "name" : "out_p5"
+      },
+      {
+        "height" : "320",
+        "colorspace" : "Grayscale",
+        "isOptional" : "0",
+        "width" : "320",
+        "isColor" : "0",
+        "formattedType" : "Image (Grayscale 320 × 320)",
+        "hasSizeFlexibility" : "0",
+        "type" : "Image",
+        "shortDescription" : "--",
+        "name" : "out_p6"
+      }
+    ],
+    "version" : "--",
+    "modelParameters" : [
+
+    ],
+    "author" : "--",
+    "specificationVersion" : 5,
+    "storagePrecision" : "Float32",
+    "license" : "--",
+    "computePrecision" : "Float16",
+    "isUpdatable" : "0",
+    "availability" : {
+      "macOS" : "11.0",
+      "tvOS" : "14.0",
+      "watchOS" : "7.0",
+      "iOS" : "14.0",
+      "macCatalyst" : "14.0"
+    },
+    "modelType" : {
+      "name" : "MLModelType_neuralNetwork"
+    },
+    "inputSchema" : [
+      {
+        "height" : "320",
+        "colorspace" : "RGB",
+        "isOptional" : "0",
+        "width" : "320",
+        "isColor" : "1",
+        "formattedType" : "Image (Color 320 × 320)",
+        "hasSizeFlexibility" : "0",
+        "type" : "Image",
+        "shortDescription" : "--",
+        "name" : "in_0"
+      }
+    ],
+    "userDefinedMetadata" : {
+      "com.github.apple.coremltools.version" : "4.1",
+      "com.github.apple.coremltools.source" : "torch==1.8.1+cu101"
+    },
+    "generatedClassName" : "LaLabsu2netp",
+    "neuralNetworkLayerTypeHistogram" : {
+      "Concat" : 51,
+      "ActivationLinear" : 7,
+      "ActivationReLU" : 112,
+      "UpsampleBiLinear" : 38,
+      "Add" : 11,
+      "BatchNorm" : 112,
+      "Convolution" : 119,
+      "ActivationSigmoid" : 7,
+      "PoolingMax" : 33
+    },
+    "method" : "predict"
+  }
+]
