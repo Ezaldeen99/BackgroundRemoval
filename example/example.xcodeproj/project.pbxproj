@@ -16,6 +16,7 @@
 		F34E970327E34FFF00C60368 /* exampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E970227E34FFF00C60368 /* exampleTests.swift */; };
 		F34E970D27E34FFF00C60368 /* exampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E970C27E34FFF00C60368 /* exampleUITests.swift */; };
 		F34E970F27E34FFF00C60368 /* exampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E970E27E34FFF00C60368 /* exampleUITestsLaunchTests.swift */; };
+		F3BBD33227E351B300DF4AEC /* BackgroundRemoval in Frameworks */ = {isa = PBXBuildFile; productRef = F3BBD33127E351B300DF4AEC /* BackgroundRemoval */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3BBD33227E351B300DF4AEC /* BackgroundRemoval in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +145,9 @@
 			dependencies = (
 			);
 			name = example;
+			packageProductDependencies = (
+				F3BBD33127E351B300DF4AEC /* BackgroundRemoval */,
+			);
 			productName = example;
 			productReference = F34E96E827E34FFE00C60368 /* example.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +220,9 @@
 				Base,
 			);
 			mainGroup = F34E96DF27E34FFE00C60368;
+			packageReferences = (
+				F3BBD33027E351B300DF4AEC /* XCRemoteSwiftPackageReference "BackgroundRemoval" */,
+			);
 			productRefGroup = F34E96E927E34FFE00C60368 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -598,6 +606,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F3BBD33027E351B300DF4AEC /* XCRemoteSwiftPackageReference "BackgroundRemoval" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Ezaldeen99/BackgroundRemoval.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F3BBD33127E351B300DF4AEC /* BackgroundRemoval */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3BBD33027E351B300DF4AEC /* XCRemoteSwiftPackageReference "BackgroundRemoval" */;
+			productName = BackgroundRemoval;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F34E96E027E34FFE00C60368 /* Project object */;
 }

@@ -6,14 +6,24 @@
 //
 
 import UIKit
+import BackgroundRemoval
+import SwiftUI
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var inputImage: UIImageView!
+    @IBOutlet weak var outputImage: UIImageView!
+    @IBOutlet weak var segmentedImage: UIImageView!
+    var imagePicker = UIImagePickerController()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        
+        let image = UIImage(named: "test2")
+        inputImage.image = image
+        outputImage.image = BackgroundRemoval.init().removeBackground(image: image!)
+        segmentedImage.image = BackgroundRemoval.init().removeBackground(image: image!, maskOnly: true)
     }
-
-
 }
 
