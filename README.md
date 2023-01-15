@@ -91,7 +91,7 @@ https://github.com/Ezaldeen99/BackgroundRemoval.git
 
 ## Author
 
-Ezaldeen sahb, let us connect https://www.linkedin.com/in/ezaldeen-sahb-17918b137/
+Ezaldeen sahb, let us connect https://www.linkedin.com/in/ezzulddin-abdulzahra-17918b137
 
 
 ## Contributing
