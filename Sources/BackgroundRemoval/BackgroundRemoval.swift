@@ -12,6 +12,9 @@ import Vision
 enum ImageProcessingError: Error {
     case processingError
     case inversionError
+    case scalingError
+    case sizingError
+    case maskingError
 }
 
 public struct BackgroundRemoval {
@@ -32,10 +35,14 @@ public struct BackgroundRemoval {
         let sz = CGSize(width: longer, height: longer)
 
         /// call scaling function to scale the image to the Square dimensions, using "aspect fit"
-        let scaledImage = image.scaled(to: sz, scalingMode: .aspectFit)
+        guard let scaledImage = image.scaled(to: sz, scalingMode: .aspectFit) else {
+            throw ImageProcessingError.scalingError
+        }
 
         /// resize image to 320 * 320 before sending it to the model
-        let resize =  scaledImage.resizeImage(width: 320, height: 320)
+        guard let resize =  scaledImage.resizeImage(width: 320, height: 320) else {
+            throw ImageProcessingError.sizingError
+        }
             
         /// init model and get result
         guard let model = try? LaLabsu2netp.init(),
@@ -45,13 +52,18 @@ public struct BackgroundRemoval {
             throw ImageProcessingError.processingError
         }
 
-        let scaledOut = out.scaled(to: sz, scalingMode: .aspectFit)
-        guard let invertedOut = scaledOut.invertedImage() else {
+        guard let scaledOut = out.scaled(to: sz, scalingMode: .aspectFit),
+              let invertedOut = scaledOut.invertedImage() else {
             throw ImageProcessingError.inversionError
         }
-        let finalResult = scaledImage.maskImage(withMask: invertedOut)
+        
+        guard let finalResult = scaledImage.maskImage(withMask: invertedOut) else {
+            throw ImageProcessingError.maskingError
+        }
+        
         return maskOnly ? scaledOut : finalResult
     }
+
     
     func buffer(from image: UIImage) -> CVPixelBuffer? {
       let attrs = [kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue, kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue] as CFDictionary
