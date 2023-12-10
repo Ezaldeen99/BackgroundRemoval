@@ -27,7 +27,13 @@ To start the background removal on your image you just need to pass a `UIImage` 
 
 ```swift
 let image = UIImage(named: "child")
-outputImage.image = BackgroundRemoval.init().removeBackground(image: image!)
+let backgroundRemoval = BackgroundRemoval()
+do {
+    outputImage.image = try backgroundRemoval.removeBackground(image: image!)
+    segmentedImage.image = try backgroundRemoval.removeBackground(image: image!, maskOnly: true)
+} catch {
+    print(error)
+}
 ```
 
 The output will always be a `UIImage` in all cases.
