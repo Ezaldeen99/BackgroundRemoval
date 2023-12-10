@@ -30,7 +30,6 @@ let image = UIImage(named: "child")
 let backgroundRemoval = BackgroundRemoval()
 do {
     outputImage.image = try backgroundRemoval.removeBackground(image: image!)
-    segmentedImage.image = try backgroundRemoval.removeBackground(image: image!, maskOnly: true)
 } catch {
     print(error)
 }
@@ -44,7 +43,12 @@ In case you wanted only The mask for your input image (black & white), then you 
 
 ```swift
 let image = UIImage(named: "child")
-segmentedImage.image = BackgroundRemoval.init().removeBackground(image: image!, maskOnly: true)
+let backgroundRemoval = BackgroundRemoval()
+do {
+    segmentedImage.image = try backgroundRemoval.removeBackground(image: image!, maskOnly: true)
+} catch {
+    print(error)
+}
 ```
 
 
