@@ -51,6 +51,37 @@ do {
 }
 ```
 
+## Save the Image 
+
+Many users have already reported issues while saving the image without background to the device, 
+
+the solution below should work.
+
+```swift
+let resultImage = BackgroundRemoval().removeBackground(image: image!)
+
+let newImage2 = drawImage(resultImage)
+let newImage = UIImage(data: newImage2!.pngData()!)
+
+outputImage.image = newImage
+```
+    
+  
+where the draw function is
+```swift
+func drawImage(_ image: UIImage) -> UIImage?
+    {
+        guard let coreImage = image.cgImage else {
+            return nil;
+        }
+        UIGraphicsBeginImageContext(CGSize(width: coreImage.width, height: coreImage.height))
+        image.draw(in: CGRect(x: Int(0.0), y: Int(0.0), width: coreImage.width, height: coreImage.height))
+        let resultImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+    
+        return resultImage;
+    }
+```
 
 ### Improve results
 
